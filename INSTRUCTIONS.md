@@ -2,8 +2,8 @@
 
 This week you have two separate parts to work on:
 
-1. Adding features to an existing Movie App with React-Redux and Redux-Sagas
-2. Practicing SQL
+[] Adding features to an existing Movie App with React-Redux and Redux-Sagas
+[X] Practicing SQL
 
 Be sure to do both parts!
 
@@ -15,14 +15,14 @@ For this weekend challenge you'll be expanding on a movie management application
 
 ## Database Setup
 
-1. Create a database named `saga_movies_weekend`
-2. Run the queries from `database.sql` on the `saga_movies_weekend` database
+[X] Create a database named `saga_movies_weekend`
+[X] Run the queries from `database.sql` on the `saga_movies_weekend` database
 
 ## Install Dependencies
 
-1. `npm install`
-2. `npm run server`
-3. `npm run client`
+[X] `npm install`
+[X] `npm run server`
+[X] `npm run client`
 
 ## Notes
 
