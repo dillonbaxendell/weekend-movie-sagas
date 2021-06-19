@@ -16,11 +16,16 @@ function MovieList() {
 
     //Function goToDetails
     function goToDetails (movie) {
-
+         console.log('The movie ID:', movie.id);
         //Set the movie to the state in details Reducer
         dispatch({
             type: 'SET_DETAILS',
             payload: movie
+        });
+
+        dispatch({
+            type: 'FETCH_GENRES',
+            payload: {id: movie.id}
         });
 
         //Go to the details page 
