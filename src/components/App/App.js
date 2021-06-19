@@ -7,8 +7,8 @@ import Header from '../Header/Header';
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Router>        
+      <Router>  
+        <Header />      
         <Route path="/" exact>
           <MovieList />
         </Route>
@@ -16,7 +16,7 @@ function App() {
           <Details />
         </Route>
         <Route path="/addMovie">
-        {/* Add Movie page */}
+          <h2>Add Movie</h2>
         </Route>
       </Router>
     </div>
