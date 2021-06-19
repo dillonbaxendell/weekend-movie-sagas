@@ -5,24 +5,31 @@ import './MovieList.css'
 import {useHistory} from 'react-router';
 
 function MovieList() {
-
+    //access history and dispatch
     const history = useHistory();
     const dispatch = useDispatch();
+    //set movies as the movies reducer from Redux
     const movies = useSelector(store => store.movies);
 
+    //On page load, run these functions
     useEffect(() => {
-        dispatch({ type: 'FETCH_MOVIES' });
+        //Grab all of the movies from the movies Reducer
+        dispatch({ type: 'FETCH_ALL_MOVIES' });
     }, []);
 
     //Function goToDetails
+    //takes the individual movie object as props
     function goToDetails (movie) {
          console.log('The movie ID:', movie.id);
+
         //Set the movie to the state in details Reducer
+        //sends this to details reducer (which movie we should be seeing in /details)
         dispatch({
             type: 'SET_DETAILS',
             payload: movie
         });
 
+        //FETCH the genres based on the specific movie we click on
         dispatch({
             type: 'FETCH_GENRES',
             payload: {id: movie.id}
