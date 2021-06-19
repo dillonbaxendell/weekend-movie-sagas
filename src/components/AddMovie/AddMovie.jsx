@@ -36,7 +36,7 @@ function AddMovie() {
         event.preventDefault();
         dispatch({ type: 'ADD_MOVIE', payload: newMovie });
         //updates the next plant to have a new id
-        setPlant({id:newMovie.id + 1, name: ''});
+        setMovie({id:newMovie.id + 1, name: ''});
     }
 
 
