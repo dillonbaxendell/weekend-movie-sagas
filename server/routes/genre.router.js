@@ -11,7 +11,7 @@ router.get(`/details/:id`, (req, res) => {
                     ON "genres".id = "movies_genres".genre_id
                     JOIN "movies"
                     ON "movies_genres".movie_id = "movies".id
-                    where "movies".id = $1;`
+                    WHERE "movies".id = $1;`
     
   pool.query(queryText, [req.params.id])
     .then( result => {
@@ -23,5 +23,18 @@ router.get(`/details/:id`, (req, res) => {
     })
 
 });
+
+router.get('/', (req, res) => {
+
+  const queryText = `SELECT * FROM genres ORDER BY "name" ASC;`
+  pool.query(queryText)
+    .then( result => {
+      res.send(result.rows);
+    })
+    .catch( err => {
+      console.log('ERROR: Get all genres', err);
+      res.sendStatus(500);
+    })
+})
 
 module.exports = router;
