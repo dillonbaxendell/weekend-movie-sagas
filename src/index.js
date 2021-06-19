@@ -15,8 +15,17 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', fetchAllMovies);
     yield takeEvery('FETCH_GENRES', fetchGenres);
+    yield takeEvery('FETCH_ALL_GENRES', fetchAllGenres);
     yield takeEvery('ADD_MOVIE', postMovie);
+    // yield takeEvery('ADD_GENRE', postGenre);
 }
+
+// function* postGenre(action) {
+//     //does a POST request into movies_genres table
+//     try {
+//         yield ax
+//     }
+// }
 
 function* postMovie(action) {
     //does a POST request
@@ -31,8 +40,22 @@ function* postMovie(action) {
     }
 }
 
+function* fetchAllGenres() {
+    //get all genres for a genreList
+    try {
+        const genres = yield axios.get('/api/genre');
+        console.log('GET all genres:', genres.data);
+        yield put({
+            type: 'SET_ALL_GENRES',
+            payload: genres.data
+        })
+    } catch (error) {
+        console.log('GET all genres error', error);
+    }
+}
+
 function* fetchGenres(action) {
-    //get all genres from id
+    //get all genres for specific id
     try {
         const movieID = yield axios.get(`/api/genre/details/${action.payload.id}`);
         console.log('What movieID.data is:', movieID.data);
@@ -83,6 +106,15 @@ const genres = (state = [], action) => {
     }
 }
 
+const allGenres = (state = [], action) => {
+    switch (action.type) {
+        case 'SET_ALL_GENRES' :
+            return action.payload;
+        default :
+            return state;
+    }
+}
+
 // Used to store which image to show in /details
 const details = (state = {}, action) => {
     switch (action.type) {
@@ -99,6 +131,7 @@ const storeInstance = createStore(
         movies,
         genres,
         details,
+        allGenres,
     }),
     // Add sagaMiddleware to our store
     applyMiddleware(sagaMiddleware, logger),
