@@ -67,8 +67,11 @@
 
 This view is completed already! It displays all of the movies in the movie database. 
 
-[] When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
+[X] When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
     [X] create a component - Details
     [X] Route to Details
-    [] 
-[] Have a way to get to the Add Movie Page
+    [X] Create details Reducer
+    [X] Dispatch to set details reducer as the movie clicked
+    [X] Render all details in the details view
+[X] Have a way to get to the Add Movie Page
+    [] still need to create AddMovie component

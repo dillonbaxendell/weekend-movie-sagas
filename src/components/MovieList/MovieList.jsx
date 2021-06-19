@@ -17,11 +17,13 @@ function MovieList() {
     //Function goToDetails
     function goToDetails (movie) {
 
+        //Set the movie to the state in details Reducer
         dispatch({
             type: 'SET_DETAILS',
             payload: movie
         });
 
+        //Go to the details page 
         history.push('/details');
     }
 
