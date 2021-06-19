@@ -25,7 +25,7 @@ function MovieList() {
 
         dispatch({
             type: 'FETCH_GENRES',
-            payload: movie.id
+            payload: {id: movie.id}
         });
 
         //Go to the details page 

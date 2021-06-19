@@ -17,10 +17,10 @@ function* rootSaga() {
     yield takeEvery('FETCH_GENRES', fetchGenres);
 }
 
-function* fetchGenres() {
+function* fetchGenres(action) {
     //get all genres from id
     try {
-        const movieID = yield axios.get('/api/genre');
+        const movieID = yield axios.get(`/api/genre/details/${action.payload.id}`);
         console.log('What movieID.data is:', movieID.data);
         console.log('GET all genres:', movieID.data);
         yield put({ type: 'SET_GENRES', payload: movieID.data});
@@ -50,6 +50,8 @@ const movies = (state = [], action) => {
     switch (action.type) {
         case 'SET_MOVIES':
             return action.payload;
+        case 'CLEAR_MOVIES' :
+            return [];
         default:
             return state;
     }
@@ -60,6 +62,8 @@ const genres = (state = [], action) => {
     switch (action.type) {
         case 'SET_GENRES':
             return action.payload;
+        case 'CLEAR_GENRES' :
+            return [];
         default:
             return state;
     }

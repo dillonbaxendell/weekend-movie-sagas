@@ -9,6 +9,7 @@ import HomeIcon from '@material-ui/icons/Home';
 //Other imports
 import { useHistory } from 'react-router';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 
 //I played around with the makeStyles method in Material-UI
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function Header() {
+const dispatch = useDispatch();
 const history = useHistory();
 //declare classes to make it easier to access in className
 const classes = useStyles();
@@ -41,6 +43,10 @@ const classes = useStyles();
 //FUNCTION - takes us to the Home page when we click on the home button
 const handleHome = () => {
     history.push('/');
+
+    dispatch({
+        type: 'CLEAR_GENRES'
+    })
 }
 
 //FUNCTION - takes us to the addMovie page
