@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import HomeIcon from '@material-ui/icons/Home';
 //Other imports
-import {useHistory} from 'react-router';
+import { useHistory } from 'react-router';
 import React from 'react';
 
 
@@ -29,12 +29,14 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-function Header() {
 
+
+function Header() {
+const history = useHistory();
 //declare classes to make it easier to access in className
 const classes = useStyles();
 //declare history as useHistory
-const history = useHistory();
+
 
 //FUNCTION - takes us to the Home page when we click on the home button
 const handleHome = () => {
