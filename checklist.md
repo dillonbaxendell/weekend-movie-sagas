@@ -69,4 +69,6 @@ This view is completed already! It displays all of the movies in the movie datab
 
 [] When a movie poster is clicked, a user should be brought to the `/details` view for that movie.
     [X] create a component - Details
+    [X] Route to Details
+    [] 
 [] Have a way to get to the Add Movie Page
