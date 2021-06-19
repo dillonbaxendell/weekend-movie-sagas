@@ -75,3 +75,26 @@ This view is completed already! It displays all of the movies in the movie datab
     [X] Render all details in the details view
 [X] Have a way to get to the Add Movie Page
     [] still need to create AddMovie component
+
+
+### Details Page
+
+This should show all details **including ALL genres** for the selected movie. You will need to store this data in redux!
+
+ > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
+
+ [] Make a dispatch to Redux in Details.jsx to get the genres? - ??do we want this in MovieList??
+    [] FETCH_GENRES
+    [] this should send over a payload (movie.id?)
+ [] Make a takeEvery for 'FETCH_GENRES', fetchGenres
+ [] fetchGenres should
+    [] try { axios.get }
+    [] yield put (remember this is like a dispatch)
+    [] catch
+[] genre.router.js
+    [] get all of the genres from database 
+    [] SQL will be important here
+
+- TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+
+> Base functionality does not require the movie details to load correctly after refresh of the browser.
