@@ -12,7 +12,14 @@ function Details() {
                 <img src={movie.poster} alt={movie.title} />
             </div>
             <div>
-                <h4>Genres: {genres}</h4>
+                <h4>Genres:</h4>
+                {genres.map(genre => {
+                    return (
+                        <div key={genre.name} >
+                            <h4>{genre.name}</h4>
+                        </div>
+                    );
+                })}
             </div>
             <div>
                 <p>{movie.description}</p>

@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool')
 
 router.get('/', (req, res) => {
-  console.log('req.body is', req.params);
+  console.log('req.body is');
   // Add query to get all genres
   const queryText = `SELECT "genres".name
                     FROM "genres"
@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
                     ON "genres".id = "movies_genres".genre_id
                     JOIN "movies"
                     ON "movies_genres".movie_id = "movies".id
-                    where "movies".id = $1;`
+                    where "movies".id = 10;`
     
-  pool.query(queryText, [req.body])
+  pool.query(queryText)
     .then( result => {
       res.send(result.rows);
     })
