@@ -95,9 +95,9 @@ This should show all details **including ALL genres** for the selected movie. Yo
     [X] get all of the genres from database 
     [X] SQL will be important here
 
-- TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
+[X] TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
 
-[] If there's a Home button in header, do we really need this?
+[X] If there's a Home button in header, do we really need this?
 
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
 
@@ -128,6 +128,6 @@ As one of your last projects, it's possible you will be sharing this with employ
 - [ ] Invest some time in styling it up!
     - [ ] Research cards for your movie posters on the list page
     - [ ] Research grids for your movie posters on the Movie List page
-- [ ] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
-- [ ] Comment your code.
+- [X] Commit your code frequently! You should have at 15+ commits on a project of this size. Use branches to help break down your features.
+- [X] Comment your code.
 - [ ] Update this README to include a description of the project in your own words.
