@@ -64,7 +64,8 @@ function AddMovie() {
                         )
                     })}
                 </select>
-                <input type='submit' value='Add New Movie' />
+                <input type='submit' value='Save' />
+                <button onClick={() => history.push('/')}>Cancel</button>
             </form>
 
         </>
