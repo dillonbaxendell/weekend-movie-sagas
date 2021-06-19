@@ -83,18 +83,40 @@ This should show all details **including ALL genres** for the selected movie. Yo
 
  > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
 
- [] Make a dispatch to Redux in Details.jsx to get the genres? - ??do we want this in MovieList??
-    [] FETCH_GENRES
-    [] this should send over a payload (movie.id?)
- [] Make a takeEvery for 'FETCH_GENRES', fetchGenres
- [] fetchGenres should
-    [] try { axios.get }
-    [] yield put (remember this is like a dispatch)
-    [] catch
-[] genre.router.js
-    [] get all of the genres from database 
-    [] SQL will be important here
+ [X] Make a dispatch to Redux in Details.jsx to get the genres? - ??do we want this in MovieList??
+    [X] FETCH_GENRES
+    [X] this should send over a payload (movie.id?)
+ [X] Make a takeEvery for 'FETCH_GENRES', fetchGenres
+ [X] fetchGenres should
+    [X] try { axios.get }
+    [X] yield put (remember this is like a dispatch)
+    [X] catch
+[X] genre.router.js
+    [X] get all of the genres from database 
+    [X] SQL will be important here
 
 - TODO: The details page should have a `Back to List` button, which should bring the user to the Home/List Page
 
+[] If there's a Home button in header, do we really need this?
+
 > Base functionality does not require the movie details to load correctly after refresh of the browser.
+
+### Add Movie Page
+
+This should show:
+
+[] an input field (for the movie title)
+[] an input field (for the movie poster image URL))
+[] a textarea (for the movie description)
+[] a dropdown (for the genres)
+
+The Add Movie page should have the buttons:
+
+- `Cancel` button, which should bring the user to the Home/List Page
+- `Save` button, which should save these inputs in the database and bring the user to the Home/List Page (which now has the new movie)
+
+**Base functionality does not require being able to select more than one genre for a new movie**
+
+> Hint: Look at the /api/movie POST route -- it's been made already but is performing 2 queries: one to store the movie information and another to store the genre in the junction table.
+
+> Hint: You'll want to use the genres that are in the db for your dropdown
