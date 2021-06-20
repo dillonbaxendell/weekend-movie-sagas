@@ -1,4 +1,5 @@
 //imports needed for fancy navbar
+import './Header.css';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -48,6 +49,7 @@ const handleAddMovie = () => {
     history.push('/addMovie');
 }
     return (
+<div className="appBar">
 <AppBar position="static">
   <Toolbar>
     <IconButton className={classes.menuButton} edge="start" color="inherit" aria-label="menu">
@@ -59,6 +61,7 @@ const handleAddMovie = () => {
     <Button onClick={handleAddMovie} color="inherit">Add Movie</Button>
   </Toolbar>
 </AppBar>
+</div>
     )
 }
 

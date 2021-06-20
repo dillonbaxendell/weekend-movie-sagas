@@ -2,12 +2,7 @@
 import "./Details.css";
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
-import Grid from '@material-ui/core/Grid';
+import { Card, CardActionArea, CardContent, Button, Typography, Grid } from '@material-ui/core';
 //React imports
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router';
@@ -58,8 +53,8 @@ function Details() {
                 {movie.description}
             </Typography>
             </CardContent>
-            <div>
-                <button onClick={() => history.push('/')}>Back</button>
+            <div className="button">
+                <Button variant="outlined" onClick={() => history.push('/')}>Back</Button>
             </div>
             </CardActionArea>
         </Card>
