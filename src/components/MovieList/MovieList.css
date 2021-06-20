@@ -1,4 +1,10 @@
 .movies {
     display : flex;
     flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image {
+    width: 185px;
+    height: 275px;
 }
