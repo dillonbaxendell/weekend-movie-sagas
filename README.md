@@ -12,8 +12,8 @@ Heroku deployment coming soon...
 
 
 ![adding](/public/images/Screenshot1.png)
-![adding](/public/images/Screenshot2.png)
 ![adding](/public/images/Screenshot3.png)
+![adding](/public/images/Screenshot2.png)
 
 ### Prerequisites
 
