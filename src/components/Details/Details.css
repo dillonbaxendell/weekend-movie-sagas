@@ -1,0 +1,17 @@
+.image {
+    margin-top: 20px;
+    border: 2px black solid;
+}
+
+.grid {
+    margin-top: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.button {
+    padding-bottom: 20px;
+}
+

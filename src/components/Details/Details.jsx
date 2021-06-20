@@ -1,7 +1,23 @@
+//Styling
+import "./Details.css";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Card, CardActionArea, CardContent, Button, Typography, Grid } from '@material-ui/core';
+//React imports
 import { useSelector } from 'react-redux';
 import {useHistory} from 'react-router';
 
+const useStyles = makeStyles({
+    root: {
+      maxWidth: 500,
+    },
+    media: {
+      height: 650,
+    },
+  });
+
 function Details() {
+    const classes = useStyles();
 
     const movie = useSelector( store => store.details);
     const genres = useSelector( store => store.genres);
@@ -9,11 +25,20 @@ function Details() {
     const history = useHistory();
 
     return (
-        <>
-            <div key={movie.id} >
-                <h3>{movie.title}</h3>
-                <img src={movie.poster} alt={movie.title} />
-            </div>
+    <main>
+    <Grid container direction="column" alignItems="center" justify="center">
+        <div className="grid">
+        <Grid item >
+        <Card className={classes.root}>
+            <CardActionArea>
+            <img className="image"
+                 src={movie.poster} 
+                 alt={movie.title} 
+            />
+            <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                    {movie.title}
+                </Typography>
             <div>
                 <h4>Genres:</h4>
                 {genres.map(genre => {
@@ -24,14 +49,19 @@ function Details() {
                     );
                 })}
             </div>
-            <div>
-                <p>{movie.description}</p>
+            <Typography variant="body2" color="textSecondary" component="p">
+                {movie.description}
+            </Typography>
+            </CardContent>
+            <div className="button">
+                <Button variant="outlined" onClick={() => history.push('/')}>Back</Button>
             </div>
-            <div>
-                <button onClick={() => history.push('/')}>Back</button>
-            </div>
-
-        </>
+            </CardActionArea>
+        </Card>
+        </Grid>
+        </div>
+        </Grid>
+        </main>
     )
 }
 

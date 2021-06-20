@@ -1,0 +1,10 @@
+.grid {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.button {
+    padding-bottom: 20px;
+}
