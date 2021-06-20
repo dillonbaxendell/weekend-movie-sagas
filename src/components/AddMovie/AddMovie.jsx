@@ -82,7 +82,8 @@ function AddMovie() {
         <Grid item >
           <Card className={classes.root}>
             <Typography variant="h2">Add Movie</Typography>
-            <FormControl onSubmit={addNewMovie}>
+            <form onSubmit={addNewMovie}>
+            <FormControl>
               <TextField
                 variant="outlined"
                 type="text"
@@ -122,13 +123,12 @@ function AddMovie() {
               </Select>
 
               <Button
-                variant="contained"
+                type="submit"
                 color="primary"
                 type="submit"
                 value="Save"
               >
-                Save
-              </Button>
+                Save</Button>
               <Button className="button"
                 variant="outlined"
                 color="primary"
@@ -136,7 +136,8 @@ function AddMovie() {
               >
                 Cancel
               </Button>
-            </FormControl>
+              </FormControl>
+            </form>
           </Card>
         </Grid>
         </div>

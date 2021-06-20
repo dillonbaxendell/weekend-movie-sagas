@@ -10,7 +10,9 @@ Heroku deployment coming soon...
 
 ## Screen Shot
 
-Screenshots coming soon...
+![adding](images/Screenshot1.png)
+![adding](images/Screenshot2.png)
+![adding](images/Screenshot3.png)
 
 ### Prerequisites
 
