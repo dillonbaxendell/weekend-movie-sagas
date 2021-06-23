@@ -69,9 +69,9 @@ function MovieList() {
         <Grid className="movies">
           {movies.map((movie) => {
             return (
-              <Card variant="outlined" className="movies">
+              <Card key={movie.id} variant="outlined" className="movies">
                 <CardActionArea>
-                  <CardContent className={classes.paper} key={movie.id}>
+                  <CardContent className={classes.paper} >
                     <Typography variant="h6">{movie.title}</Typography>
                     <img
                       className="image"

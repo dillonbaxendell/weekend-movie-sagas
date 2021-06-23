@@ -52,8 +52,8 @@ const handleAddMovie = () => {
 <div className="appBar">
 <AppBar position="static">
   <Toolbar>
-    <IconButton className={classes.menuButton} edge="start" color="inherit" aria-label="menu">
-      <HomeIcon onClick={handleHome}/>
+    <IconButton onClick={handleHome} className={classes.menuButton} edge="start" color="inherit" aria-label="menu">
+      <HomeIcon />
     </IconButton>
     <Typography variant="h6" className={classes.title}>
       The Movies Saga!
